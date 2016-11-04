@@ -100,6 +100,8 @@ module.exports = {
     ],
     extensions: ['', '.json', '.js', '.jsx']
   },
+  
+  /*load the mongo db seperate from webpack, ignore it, then include it*/
   plugins: [
     // hot reload
     new webpack.HotModuleReplacementPlugin(),
