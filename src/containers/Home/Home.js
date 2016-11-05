@@ -16,6 +16,7 @@ export default class Home extends Component {
     constructor(props) {
     super(props);
     this.click = this.click.bind(this);
+    this.credits = this.credits.bind(this);
     this.state = {userName: '', password: ''};
   }
   click() {
@@ -45,7 +46,7 @@ export default class Home extends Component {
    break;
    
    default:
-   console.log('none');
+   break; 
    }
  }
  
@@ -55,8 +56,8 @@ export default class Home extends Component {
       <div className={styles.home}>
         <Helmet title="Home"/>
         <h1>Hello World</h1>
-        &nbsp; &nbsp; <label>User Name: <input onChange = {this.credits(1)} type = "text" /></label><br />
-        &nbsp; &nbsp; <label>Password <input onChange = {this.credits(2)} type = "text" /></label><br />
+        &nbsp; &nbsp; <label>User Name: <input value = {this.state.userName} onChange = { (event) => this.credits(event, 1)} type = "text" /></label><br />
+        &nbsp; &nbsp; <label>Password <input value = {this.state.password} onChange = { (event) => this.credits(event, 2)} type = "text" /></label><br />
         &nbsp; &nbsp; <button onClick = {this.click} className = "btn btn-success">Login</button>
       </div>
     );
