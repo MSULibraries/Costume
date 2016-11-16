@@ -10,7 +10,7 @@ const app = firebase.initializeApp({
     authDomain: '**********************',
     databaseURL: '***************************',
     storageBucket: '*******************************',
-    messagingSenderId: '*****************************'
+    messagingSenderId: '******************************'
 });
 
 /* Extension of React.Js component class
