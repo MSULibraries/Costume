@@ -1,14 +1,22 @@
 import React, { Component, PropTypes } from 'react';
-export default class App extends Component {
+import Text from './product_text.jsx';
+export default class Picture extends Component {
 	render(){
 	  var indents = [];
+	  if(this.props.sidebar){
       for (var i = 0; i < this.props.amount; i++) {
-        indents.push(<div><img className = "col-md-3" src="http://placehold.it/350x150" /><br/><h1>Product</h1></div>);
-      }
-    return(
-      <div>
-	   {indents}
-      </div>
-    );
+        indents.push(<div><div id = {i}><img style = {{margin: '10%'}}  src={this.props.src[i]} /></div><br/></div>);
+       }
+	  }
+	  else{
+		  for (var i = 0; i < this.props.amount; i++) {
+        indents.push(<div id = {i} className = "col-md-3"><img style = {{margin: '1%'}}  src={this.props.src[i]} /><p>{this.props.name[i]}</p></div>);
+       }
+	  }
+    return ( 
+	<div onClick={this.props.onClick}>
+	{indents} 
+	</div>
+	);
   }
 }

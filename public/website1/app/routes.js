@@ -2,7 +2,8 @@ import App from './containers/App/app.jsx';
 import Home from './containers/Home/home.jsx';      
 import Login from './containers/Login/login.jsx';  
 import NotFound from './containers/NotFound/notfound.jsx'; 
-import Products from './containers/Products/products.jsx';   
+import Products from './containers/Products/products.jsx';  
+import Product from './containers/Product/product.jsx';    
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
@@ -16,6 +17,7 @@ class Routes extends React.Component {
           <IndexRoute component={Home}/>
 		  <Route path = {"Login"} component = {Login} />
 		  <Route path = {"Products"} component = {Products} />
+		  <Route path = {"Product"} component = {Product} />
 		  <Route path = "*" component={NotFound} status={404} />
 		</Route>
 	</Router>
